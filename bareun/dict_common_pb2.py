@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x62\x61reun/dict_common.proto\x12\x06\x62\x61reun\"\x90\x01\n\x07\x44ictSet\x12)\n\x05items\x18\x01 \x03(\x0b\x32\x1a.bareun.DictSet.ItemsEntry\x12\x1e\n\x04type\x18\x02 \x01(\x0e\x32\x10.bareun.DictType\x12\x0c\n\x04name\x18\n \x01(\t\x1a,\n\nItemsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01*B\n\x08\x44ictType\x12\x0f\n\x0bTOKEN_INDEX\x10\x00\x12\r\n\tWORD_LIST\x10\x01\x12\x16\n\x12WORD_LIST_COMPOUND\x10\x02\x42<\n\tbareun.aiB\x15\x44ictionaryCommonProtoP\x01Z\x16\x62\x61reun.ai/proto/bareunb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x62\x61reun/dict_common.proto\x12\x06\x62\x61reun\"\x90\x01\n\x07\x44ictSet\x12)\n\x05items\x18\x01 \x03(\x0b\x32\x1a.bareun.DictSet.ItemsEntry\x12\x1e\n\x04type\x18\x02 \x01(\x0e\x32\x10.bareun.DictType\x12\x0c\n\x04name\x18\n \x01(\t\x1a,\n\nItemsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01*B\n\x08\x44ictType\x12\x0f\n\x0bTOKEN_INDEX\x10\x00\x12\r\n\tWORD_LIST\x10\x01\x12\x16\n\x12WORD_LIST_COMPOUND\x10\x02\x42\x43\n\x10\x61i.bareun.protosB\x15\x44ictionaryCommonProtoP\x01Z\x16\x62\x61reun.ai/proto/bareunb\x06proto3')
 
 _DICTTYPE = DESCRIPTOR.enum_types_by_name['DictType']
 DictType = enum_type_wrapper.EnumTypeWrapper(_DICTTYPE)
@@ -44,7 +44,7 @@ _sym_db.RegisterMessage(DictSet.ItemsEntry)
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\tbareun.aiB\025DictionaryCommonProtoP\001Z\026bareun.ai/proto/bareun'
+  DESCRIPTOR._serialized_options = b'\n\020ai.bareun.protosB\025DictionaryCommonProtoP\001Z\026bareun.ai/proto/bareun'
   _DICTSET_ITEMSENTRY._options = None
   _DICTSET_ITEMSENTRY._serialized_options = b'8\001'
   _DICTTYPE._serialized_start=183

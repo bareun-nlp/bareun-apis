@@ -26,7 +26,6 @@ import bareun.language_service_pb2_grpc as ls
 MAX_MESSAGE_LENGTH = 100*1024*1024
 
 class BareunLanguageServiceClient:
-    stub = None
 
     def __init__(self, remote):
         channel = grpc.insecure_channel(
@@ -49,6 +48,16 @@ class BareunLanguageServiceClient:
         # print_syntax_as_json(res)
         return res
 
+    def tokenize(self, document, auto_split=False):
+        req = pb.TokenizeRequest()
+        req.document.content = document
+        req.document.language = "ko_KR"
+        req.encoding_type = pb.EncodingType.UTF32
+        req.auto_split_sentence = auto_split
+
+        res = self.stub.Tokenize(req)
+        # print_tokens_as_json(res)
+        return res
 
 def print_syntax_as_json(res: pb.AnalyzeSyntaxResponse, logf=sys.stdout):
     d = MessageToDict(res)
@@ -56,4 +65,12 @@ def print_syntax_as_json(res: pb.AnalyzeSyntaxResponse, logf=sys.stdout):
     json_str = json.dumps(d, ensure_ascii=False, indent=2)
     logf.write(json_str)
     logf.write('\n')
+
+def print_tokens_as_json(res: pb.TokenizeResponse, logf=sys.stdout):
+    d = MessageToDict(res)
+    import json
+    json_str = json.dumps(d, ensure_ascii=False, indent=2)
+    logf.write(json_str)
+    logf.write('\n')
+
 ```
