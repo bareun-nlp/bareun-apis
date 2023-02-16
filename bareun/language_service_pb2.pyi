@@ -497,6 +497,7 @@ class Token(google.protobuf.message.Message):
     MORPHEMES_FIELD_NUMBER: builtins.int
     LEMMA_FIELD_NUMBER: builtins.int
     TAGGED_FIELD_NUMBER: builtins.int
+    MODIFIED_FIELD_NUMBER: builtins.int
     @property
     def text(self) -> global___TextSpan:
         """The token text."""
@@ -504,8 +505,13 @@ class Token(google.protobuf.message.Message):
     def morphemes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Morpheme]:
         """어절 내부의 형태소 분리"""
     lemma: builtins.str
-    """[Lemma](https://en.wikipedia.org/wiki/Lemma_%28morphology%29) of the token."""
+    """원형
+    [Lemma](https://en.wikipedia.org/wiki/Lemma_%28morphology%29) of the token.
+    """
     tagged: builtins.str
+    """테그 문자열"""
+    modified: builtins.str
+    """원래의 값과 다른 내용이 있으면 modified에 값을 넣는다."""
     def __init__(
         self,
         *,
@@ -513,9 +519,10 @@ class Token(google.protobuf.message.Message):
         morphemes: collections.abc.Iterable[global___Morpheme] | None = ...,
         lemma: builtins.str = ...,
         tagged: builtins.str = ...,
+        modified: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["text", b"text"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["lemma", b"lemma", "morphemes", b"morphemes", "tagged", b"tagged", "text", b"text"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["lemma", b"lemma", "modified", b"modified", "morphemes", b"morphemes", "tagged", b"tagged", "text", b"text"]) -> None: ...
 
 global___Token = Token
 
