@@ -39,7 +39,7 @@ Operating System :: MacOS
 
 setuptools.setup(
     name="bareun-apis",
-    version="0.12.0",
+    version="0.13.0",
     author="Gihyun YUN",
     author_email="gih2yun@baikal.ai",
     description="The google protobuf and grpc IDL, generated classes of python 3.",
