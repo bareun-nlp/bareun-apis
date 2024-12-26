@@ -206,14 +206,11 @@ class RevisedSentence(google.protobuf.message.Message):
 
     ORIGIN_FIELD_NUMBER: builtins.int
     REVISED_FIELD_NUMBER: builtins.int
-    WORD_DIFF_FIELD_NUMBER: builtins.int
     REVISED_BLOCKS_FIELD_NUMBER: builtins.int
     origin: builtins.str
     """원래 문장"""
     revised: builtins.str
     """교정된 전체 문장"""
-    word_diff: builtins.str
-    """원래 문장과 교정된 문장"""
     @property
     def revised_blocks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RevisedBlock]:
         """수정된 결과들 하나 이상"""
@@ -222,10 +219,9 @@ class RevisedSentence(google.protobuf.message.Message):
         *,
         origin: builtins.str = ...,
         revised: builtins.str = ...,
-        word_diff: builtins.str = ...,
         revised_blocks: collections.abc.Iterable[global___RevisedBlock] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["origin", b"origin", "revised", b"revised", "revised_blocks", b"revised_blocks", "word_diff", b"word_diff"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["origin", b"origin", "revised", b"revised", "revised_blocks", b"revised_blocks"]) -> None: ...
 
 global___RevisedSentence = RevisedSentence
 
@@ -236,15 +232,12 @@ class CorrectErrorResponse(google.protobuf.message.Message):
 
     ORIGIN_FIELD_NUMBER: builtins.int
     REVISED_FIELD_NUMBER: builtins.int
-    WORD_DIFF_FIELD_NUMBER: builtins.int
     REVISED_SENTENCES_FIELD_NUMBER: builtins.int
     LANGUAGE_FIELD_NUMBER: builtins.int
     origin: builtins.str
     """원래 요청 문서"""
     revised: builtins.str
     """교정 문장 문서"""
-    word_diff: builtins.str
-    """원래 문서과 교정 문서 사이의 word-diff 스타일 표시"""
     @property
     def revised_sentences(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RevisedSentence]:
         """교정된 문장들"""
@@ -258,10 +251,9 @@ class CorrectErrorResponse(google.protobuf.message.Message):
         *,
         origin: builtins.str = ...,
         revised: builtins.str = ...,
-        word_diff: builtins.str = ...,
         revised_sentences: collections.abc.Iterable[global___RevisedSentence] | None = ...,
         language: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["language", b"language", "origin", b"origin", "revised", b"revised", "revised_sentences", b"revised_sentences", "word_diff", b"word_diff"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["language", b"language", "origin", b"origin", "revised", b"revised", "revised_sentences", b"revised_sentences"]) -> None: ...
 
 global___CorrectErrorResponse = CorrectErrorResponse
