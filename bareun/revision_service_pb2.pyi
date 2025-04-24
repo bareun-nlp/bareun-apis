@@ -25,47 +25,103 @@ class _RevisionCategory:
 
 class _RevisionCategoryEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RevisionCategory.ValueType], builtins.type):  # noqa: F821
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-    RE_UNKNOWN: _RevisionCategory.ValueType  # 0
+    UNKNOWN: _RevisionCategory.ValueType  # 0
     """교정 카테고리가 없음"""
-    RE_KOREAN_SPELLING_PHONOLOGICAL_RULES: _RevisionCategory.ValueType  # 1
-    """교정 유형: 맞춤법 음운에 관한 사항"""
-    RE_KOREAN_SPELLING_MORPHOLOGICAL_RULES: _RevisionCategory.ValueType  # 2
-    """교정 유형: 맞춤법 형태에 관한 사항"""
-    RE_KOREAN_SPELLING_SPACING_RULES: _RevisionCategory.ValueType  # 3
-    """교정 유형: 띄어쓰기에 관한 사항"""
-    RE_KOREAN_SPELLING_MISCELLANEOUS_RULES: _RevisionCategory.ValueType  # 4
-    """교정 유형: 표준어에 관한 사항"""
-    RE_KOREAN_SPELLING_GENERAL: _RevisionCategory.ValueType  # 5
-    """교정 유형: 표준어에 관한 사항, 공통 일반"""
-    RE_KOREAN_STANDARD_PRONOUNCIATION_CHANGE: _RevisionCategory.ValueType  # 6
-    """교정 유형: 표준어, 발음 변화에 따른 규정"""
-    RE_KOREAN_STANDARD_WORD_SELECTION_CHANEG: _RevisionCategory.ValueType  # 7
-    """교정 유형: 표준어, 발음 변화에 따른 규정
-    교정 유형: 표준어 일반
+    GRAMMER: _RevisionCategory.ValueType  # 1
+    """교정 유형: 맞춤법 어법에 관한 사항
+    활용, 조사 결합, 구둣점 등
     """
+    WORD: _RevisionCategory.ValueType  # 2
+    """교정 유형: 맞춤법 단어단위 규칙에 관한 사항
+    사이시옷, 두음법칙, 한자결합(율,률) 등
+    """
+    SPACING: _RevisionCategory.ValueType  # 3
+    """교정 유형: 띄어쓰기에 관한 사항"""
+    STANDARD: _RevisionCategory.ValueType  # 8
+    """교정 유형: 표준어 일반"""
+    TYPO: _RevisionCategory.ValueType  # 9
+    """교정 유형: 오탈자"""
+    FOREIGN_WORD: _RevisionCategory.ValueType  # 10
+    """교정 유형: 외래어 표기법"""
+    CONFUSABLE_WORDS: _RevisionCategory.ValueType  # 11
+    """교정 유형: 혼동하기 쉬운 단어"""
+    SENTENCE: _RevisionCategory.ValueType  # 12
+    """교정 유형: 문장 단위 오류"""
+    CONFIRM: _RevisionCategory.ValueType  # 13
+    """교정 유형: 확인 필요"""
 
 class RevisionCategory(_RevisionCategory, metaclass=_RevisionCategoryEnumTypeWrapper):
     """한국어 문장 교정의 카테고리"""
 
-RE_UNKNOWN: RevisionCategory.ValueType  # 0
+UNKNOWN: RevisionCategory.ValueType  # 0
 """교정 카테고리가 없음"""
-RE_KOREAN_SPELLING_PHONOLOGICAL_RULES: RevisionCategory.ValueType  # 1
-"""교정 유형: 맞춤법 음운에 관한 사항"""
-RE_KOREAN_SPELLING_MORPHOLOGICAL_RULES: RevisionCategory.ValueType  # 2
-"""교정 유형: 맞춤법 형태에 관한 사항"""
-RE_KOREAN_SPELLING_SPACING_RULES: RevisionCategory.ValueType  # 3
-"""교정 유형: 띄어쓰기에 관한 사항"""
-RE_KOREAN_SPELLING_MISCELLANEOUS_RULES: RevisionCategory.ValueType  # 4
-"""교정 유형: 표준어에 관한 사항"""
-RE_KOREAN_SPELLING_GENERAL: RevisionCategory.ValueType  # 5
-"""교정 유형: 표준어에 관한 사항, 공통 일반"""
-RE_KOREAN_STANDARD_PRONOUNCIATION_CHANGE: RevisionCategory.ValueType  # 6
-"""교정 유형: 표준어, 발음 변화에 따른 규정"""
-RE_KOREAN_STANDARD_WORD_SELECTION_CHANEG: RevisionCategory.ValueType  # 7
-"""교정 유형: 표준어, 발음 변화에 따른 규정
-교정 유형: 표준어 일반
+GRAMMER: RevisionCategory.ValueType  # 1
+"""교정 유형: 맞춤법 어법에 관한 사항
+활용, 조사 결합, 구둣점 등
 """
+WORD: RevisionCategory.ValueType  # 2
+"""교정 유형: 맞춤법 단어단위 규칙에 관한 사항
+사이시옷, 두음법칙, 한자결합(율,률) 등
+"""
+SPACING: RevisionCategory.ValueType  # 3
+"""교정 유형: 띄어쓰기에 관한 사항"""
+STANDARD: RevisionCategory.ValueType  # 8
+"""교정 유형: 표준어 일반"""
+TYPO: RevisionCategory.ValueType  # 9
+"""교정 유형: 오탈자"""
+FOREIGN_WORD: RevisionCategory.ValueType  # 10
+"""교정 유형: 외래어 표기법"""
+CONFUSABLE_WORDS: RevisionCategory.ValueType  # 11
+"""교정 유형: 혼동하기 쉬운 단어"""
+SENTENCE: RevisionCategory.ValueType  # 12
+"""교정 유형: 문장 단위 오류"""
+CONFIRM: RevisionCategory.ValueType  # 13
+"""교정 유형: 확인 필요"""
 global___RevisionCategory = RevisionCategory
+
+class _CustomDictPos:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _CustomDictPosEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CustomDictPos.ValueType], builtins.type):  # noqa: F821
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    POS_UNK: _CustomDictPos.ValueType  # 0
+    """해당 없음"""
+    POS_NNG: _CustomDictPos.ValueType  # 1
+    """복합명사 사전"""
+    POS_NNP: _CustomDictPos.ValueType  # 2
+    """고유명사 사전"""
+    POS_NNG_CARET: _CustomDictPos.ValueType  # 3
+    """복합명사 분리 사전"""
+    POS_VV: _CustomDictPos.ValueType  # 4
+    """동사 사전"""
+    POS_VA: _CustomDictPos.ValueType  # 5
+    """형용사 사전"""
+    POS_MM: _CustomDictPos.ValueType  # 6
+    """관형사 사전"""
+    POS_IC: _CustomDictPos.ValueType  # 7
+    """감탄사 사전"""
+
+class CustomDictPos(_CustomDictPos, metaclass=_CustomDictPosEnumTypeWrapper):
+    """사용자 사전용 형태소"""
+
+POS_UNK: CustomDictPos.ValueType  # 0
+"""해당 없음"""
+POS_NNG: CustomDictPos.ValueType  # 1
+"""복합명사 사전"""
+POS_NNP: CustomDictPos.ValueType  # 2
+"""고유명사 사전"""
+POS_NNG_CARET: CustomDictPos.ValueType  # 3
+"""복합명사 분리 사전"""
+POS_VV: CustomDictPos.ValueType  # 4
+"""동사 사전"""
+POS_VA: CustomDictPos.ValueType  # 5
+"""형용사 사전"""
+POS_MM: CustomDictPos.ValueType  # 6
+"""관형사 사전"""
+POS_IC: CustomDictPos.ValueType  # 7
+"""감탄사 사전"""
+global___CustomDictPos = CustomDictPos
 
 class CorrectErrorRequest(google.protobuf.message.Message):
     """=================================
@@ -106,20 +162,20 @@ class CorrectErrorRequest(google.protobuf.message.Message):
 
 global___CorrectErrorRequest = CorrectErrorRequest
 
-class Revision(google.protobuf.message.Message):
-    """한개의 교정에 대한 정보"""
+class ReviseHelp(google.protobuf.message.Message):
+    """교정에 대한 도움말 객체"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    REVISED_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
     CATEGORY_FIELD_NUMBER: builtins.int
     COMMENT_FIELD_NUMBER: builtins.int
     EXAMPLES_FIELD_NUMBER: builtins.int
     RULE_ARTICLE_FIELD_NUMBER: builtins.int
-    SCORE_FIELD_NUMBER: builtins.int
-    revised: builtins.str
-    """수정을 제안한 토큰"""
+    id: builtins.str
+    """도움말 ID, 고정된 도움말이 있을 수 있고, 동적으로 생성되는 도움말이 있을 수 있다."""
     category: global___RevisionCategory.ValueType
+    """문장 교정의 카테고리"""
     comment: builtins.str
     """바뀌어야 하는 이유에 대한 섧명"""
     @property
@@ -127,24 +183,67 @@ class Revision(google.protobuf.message.Message):
         """변경이 될 수 있는 문장들"""
     rule_article: builtins.str
     """관련 규정"""
-    score: builtins.float
-    """점수, 점수가 높으면 수정의 후보가 높다."""
     def __init__(
         self,
         *,
-        revised: builtins.str = ...,
+        id: builtins.str = ...,
         category: global___RevisionCategory.ValueType = ...,
         comment: builtins.str = ...,
         examples: collections.abc.Iterable[builtins.str] | None = ...,
         rule_article: builtins.str = ...,
-        score: builtins.float = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["category", b"category", "comment", b"comment", "examples", b"examples", "revised", b"revised", "rule_article", b"rule_article", "score", b"score"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["category", b"category", "comment", b"comment", "examples", b"examples", "id", b"id", "rule_article", b"rule_article"]) -> None: ...
+
+global___ReviseHelp = ReviseHelp
+
+class Revision(google.protobuf.message.Message):
+    """한개의 교정에 대한 정보"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REVISED_FIELD_NUMBER: builtins.int
+    SCORE_FIELD_NUMBER: builtins.int
+    CATEGORY_FIELD_NUMBER: builtins.int
+    HELP_ID_FIELD_NUMBER: builtins.int
+    revised: builtins.str
+    """수정을 제안한 토큰"""
+    score: builtins.float
+    """수정에 대한 점수, 점수가 높으면 수정의 후보가 높다."""
+    category: global___RevisionCategory.ValueType
+    """RevisionCagetory 정보"""
+    help_id: builtins.str
+    """수정에 대한 도움말, 인덱스 정보"""
+    def __init__(
+        self,
+        *,
+        revised: builtins.str = ...,
+        score: builtins.float = ...,
+        category: global___RevisionCategory.ValueType = ...,
+        help_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["category", b"category", "help_id", b"help_id", "revised", b"revised", "score", b"score"]) -> None: ...
 
 global___Revision = Revision
 
 class RevisedBlock(google.protobuf.message.Message):
     """교정의 결과
+    교정의 결과는 원문을 기준으로 한다. 원문의 띄어쓰기 단위로 하나의 블럭이 만들어진다.
+    블럭과 블럭 사이가 붙여쓰기로 연결되는 조건이 발생하면, 이 블럭들은 연결하여 하나의 블럭으로 만든다.
+
+    블럭과 블럭이 연결되는 조건은 아래와 같은 경우이다.
+    하지만아무도도와 드리지않았다.
+    [띄어쓰기 블럭]
+             [붙여쓰기 ]
+                 [띄어쓰기  ]
+
+    한때, 띄어쓰기만 하나로 나타나는 경우에도 공백이 삽입되어야 하는 위치를 표시하고, 길이를 0으로
+    표시한 적이 있었지만, 이제는 무조건 원문의 어절을 기준으로 하기 때문에 굳이 그럴 필요는 없다.
+    그 이전과 바뀌는 것을 표시하는 방식으로 진행하면 된다.
+
+    만일 하나 이상의 블럭이 합쳐서 처리되는 경우에는 lemma는 포함되지 않는다.
+    nested의 경우에는 lemma를 포함할 수 있다.
+
+    동일한 원문 하나 이상의 교정이 발생하는 경우, 
     A. 붙여쓰기의 경우
       origin, "도와 드려서" -> (0, 5)
       revised "도와드려서"
@@ -164,6 +263,9 @@ class RevisedBlock(google.protobuf.message.Message):
     ORIGIN_FIELD_NUMBER: builtins.int
     REVISED_FIELD_NUMBER: builtins.int
     REVISIONS_FIELD_NUMBER: builtins.int
+    NESTED_FIELD_NUMBER: builtins.int
+    LEMMA_FIELD_NUMBER: builtins.int
+    POS_FIELD_NUMBER: builtins.int
     @property
     def origin(self) -> bareun.lang_common_pb2.TextSpan:
         """교정대상의 위치
@@ -187,15 +289,31 @@ class RevisedBlock(google.protobuf.message.Message):
     @property
     def revisions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Revision]:
         """다양한 교정 문장의 예시들"""
+    @property
+    def nested(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RevisedBlock]:
+        """여러 개의 블럭을 하나로 합친 경우에는
+        원래의 블럭이 틀리지 않았을 것이므로
+        이들을 포함하여 내부에 가지도록 한다.
+        다만 이 nested 블럭은 각각은 개별 수정만을 포함하고 있으므로
+        제대로 모든 블럭을 다 가지고 있을 수 없다.
+        이게 필요한 이유는 고급 사용의 경우, 해당 내용만을 수정에 반영할 수 있도록 하기 위함.
+        """
+    lemma: builtins.str
+    """사용사 사전에 추가하기 위한 기본 단위, nested가 존재하는 쓸 수 없다."""
+    pos: global___CustomDictPos.ValueType
+    """사용사 사전에 추가할 품사"""
     def __init__(
         self,
         *,
         origin: bareun.lang_common_pb2.TextSpan | None = ...,
         revised: builtins.str = ...,
         revisions: collections.abc.Iterable[global___Revision] | None = ...,
+        nested: collections.abc.Iterable[global___RevisedBlock] | None = ...,
+        lemma: builtins.str = ...,
+        pos: global___CustomDictPos.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["origin", b"origin"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["origin", b"origin", "revised", b"revised", "revisions", b"revisions"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["lemma", b"lemma", "nested", b"nested", "origin", b"origin", "pos", b"pos", "revised", b"revised", "revisions", b"revisions"]) -> None: ...
 
 global___RevisedBlock = RevisedBlock
 
@@ -206,22 +324,17 @@ class RevisedSentence(google.protobuf.message.Message):
 
     ORIGIN_FIELD_NUMBER: builtins.int
     REVISED_FIELD_NUMBER: builtins.int
-    REVISED_BLOCKS_FIELD_NUMBER: builtins.int
     origin: builtins.str
     """원래 문장"""
     revised: builtins.str
     """교정된 전체 문장"""
-    @property
-    def revised_blocks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RevisedBlock]:
-        """수정된 결과들 하나 이상"""
     def __init__(
         self,
         *,
         origin: builtins.str = ...,
         revised: builtins.str = ...,
-        revised_blocks: collections.abc.Iterable[global___RevisedBlock] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["origin", b"origin", "revised", b"revised", "revised_blocks", b"revised_blocks"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["origin", b"origin", "revised", b"revised"]) -> None: ...
 
 global___RevisedSentence = RevisedSentence
 
@@ -230,17 +343,42 @@ class CorrectErrorResponse(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class HelpsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        @property
+        def value(self) -> global___ReviseHelp: ...
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: global___ReviseHelp | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     ORIGIN_FIELD_NUMBER: builtins.int
     REVISED_FIELD_NUMBER: builtins.int
+    REVISED_BLOCKS_FIELD_NUMBER: builtins.int
     REVISED_SENTENCES_FIELD_NUMBER: builtins.int
+    HELPS_FIELD_NUMBER: builtins.int
     LANGUAGE_FIELD_NUMBER: builtins.int
     origin: builtins.str
     """원래 요청 문서"""
     revised: builtins.str
     """교정 문장 문서"""
     @property
+    def revised_blocks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RevisedBlock]:
+        """수정된 결과들 하나 이상"""
+    @property
     def revised_sentences(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RevisedSentence]:
         """교정된 문장들"""
+    @property
+    def helps(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___ReviseHelp]:
+        """교정 도움말들에 대한 정보"""
     language: builtins.str
     """텍스트의 언어, 만일 언어가 지정되지 않은 경우에는 자동으로 탐지하여 반환한다.
     언어가 지정된 경우에는 동일한 언어를 반환한다.
@@ -251,9 +389,11 @@ class CorrectErrorResponse(google.protobuf.message.Message):
         *,
         origin: builtins.str = ...,
         revised: builtins.str = ...,
+        revised_blocks: collections.abc.Iterable[global___RevisedBlock] | None = ...,
         revised_sentences: collections.abc.Iterable[global___RevisedSentence] | None = ...,
+        helps: collections.abc.Mapping[builtins.str, global___ReviseHelp] | None = ...,
         language: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["language", b"language", "origin", b"origin", "revised", b"revised", "revised_sentences", b"revised_sentences"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["helps", b"helps", "language", b"language", "origin", b"origin", "revised", b"revised", "revised_blocks", b"revised_blocks", "revised_sentences", b"revised_sentences"]) -> None: ...
 
 global___CorrectErrorResponse = CorrectErrorResponse
