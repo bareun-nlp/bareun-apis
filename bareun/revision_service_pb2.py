@@ -17,31 +17,52 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from bareun import lang_common_pb2 as bareun_dot_lang__common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x62\x61reun/revision_service.proto\x12\x06\x62\x61reun\x1a\x1cgoogle/api/annotations.proto\x1a\x18\x62\x61reun/lang_common.proto\"\x9a\x01\n\x13\x43orrectErrorRequest\x12\"\n\x08\x64ocument\x18\x01 \x01(\x0b\x32\x10.bareun.Document\x12+\n\rencoding_type\x18\x02 \x01(\x0e\x32\x14.bareun.EncodingType\x12\x1b\n\x13\x61uto_split_sentence\x18\x03 \x01(\x08\x12\x15\n\rcustom_domain\x18\x04 \x01(\t\"\x8f\x01\n\x08Revision\x12\x0f\n\x07revised\x18\x01 \x01(\t\x12*\n\x08\x63\x61tegory\x18\x02 \x01(\x0e\x32\x18.bareun.RevisionCategory\x12\x0f\n\x07\x63omment\x18\x03 \x01(\t\x12\x10\n\x08\x65xamples\x18\x04 \x03(\t\x12\x14\n\x0crule_article\x18\x05 \x01(\t\x12\r\n\x05score\x18\x06 \x01(\x02\"f\n\x0cRevisedBlock\x12 \n\x06origin\x18\x01 \x01(\x0b\x32\x10.bareun.TextSpan\x12\x0f\n\x07revised\x18\x02 \x01(\t\x12#\n\trevisions\x18\x03 \x03(\x0b\x32\x10.bareun.Revision\"`\n\x0fRevisedSentence\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0f\n\x07revised\x18\x02 \x01(\t\x12,\n\x0erevised_blocks\x18\x0b \x03(\x0b\x32\x14.bareun.RevisedBlock\"}\n\x14\x43orrectErrorResponse\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0f\n\x07revised\x18\x02 \x01(\t\x12\x32\n\x11revised_sentences\x18\x0b \x03(\x0b\x32\x17.bareun.RevisedSentence\x12\x10\n\x08language\x18\x63 \x01(\t*\xc7\x02\n\x10RevisionCategory\x12\x0e\n\nRE_UNKNOWN\x10\x00\x12)\n%RE_KOREAN_SPELLING_PHONOLOGICAL_RULES\x10\x01\x12*\n&RE_KOREAN_SPELLING_MORPHOLOGICAL_RULES\x10\x02\x12$\n RE_KOREAN_SPELLING_SPACING_RULES\x10\x03\x12*\n&RE_KOREAN_SPELLING_MISCELLANEOUS_RULES\x10\x04\x12\x1e\n\x1aRE_KOREAN_SPELLING_GENERAL\x10\x05\x12,\n(RE_KOREAN_STANDARD_PRONOUNCIATION_CHANGE\x10\x06\x12,\n(RE_KOREAN_STANDARD_WORD_SELECTION_CHANEG\x10\x07\x32\x85\x01\n\x0fRevisionService\x12r\n\x0c\x43orrectError\x12\x1b.bareun.CorrectErrorRequest\x1a\x1c.bareun.CorrectErrorResponse\"\'\x82\xd3\xe4\x93\x02!\"\x1c/bareun/api/v1/correct-error:\x01*BB\n\x10\x61i.bareun.protosB\x14RevisionServiceProtoP\x01Z\x16\x62\x61reun.ai/proto/bareunb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x62\x61reun/revision_service.proto\x12\x06\x62\x61reun\x1a\x1cgoogle/api/annotations.proto\x1a\x18\x62\x61reun/lang_common.proto\"\x9a\x01\n\x13\x43orrectErrorRequest\x12\"\n\x08\x64ocument\x18\x01 \x01(\x0b\x32\x10.bareun.Document\x12+\n\rencoding_type\x18\x02 \x01(\x0e\x32\x14.bareun.EncodingType\x12\x1b\n\x13\x61uto_split_sentence\x18\x03 \x01(\x08\x12\x15\n\rcustom_domain\x18\x04 \x01(\t\"}\n\nReviseHelp\x12\n\n\x02id\x18\x01 \x01(\t\x12*\n\x08\x63\x61tegory\x18\x02 \x01(\x0e\x32\x18.bareun.RevisionCategory\x12\x0f\n\x07\x63omment\x18\x03 \x01(\t\x12\x10\n\x08\x65xamples\x18\x04 \x03(\t\x12\x14\n\x0crule_article\x18\x05 \x01(\t\"g\n\x08Revision\x12\x0f\n\x07revised\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x01\x12*\n\x08\x63\x61tegory\x18\x03 \x01(\x0e\x32\x18.bareun.RevisionCategory\x12\x0f\n\x07help_id\x18\x04 \x01(\t\"\xbf\x01\n\x0cRevisedBlock\x12 \n\x06origin\x18\x01 \x01(\x0b\x32\x10.bareun.TextSpan\x12\x0f\n\x07revised\x18\x02 \x01(\t\x12#\n\trevisions\x18\x03 \x03(\x0b\x32\x10.bareun.Revision\x12$\n\x06nested\x18\n \x03(\x0b\x32\x14.bareun.RevisedBlock\x12\r\n\x05lemma\x18\x04 \x01(\t\x12\"\n\x03pos\x18\x05 \x01(\x0e\x32\x15.bareun.CustomDictPos\"2\n\x0fRevisedSentence\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0f\n\x07revised\x18\x02 \x01(\t\"\xa5\x02\n\x14\x43orrectErrorResponse\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0f\n\x07revised\x18\x02 \x01(\t\x12,\n\x0erevised_blocks\x18\x03 \x03(\x0b\x32\x14.bareun.RevisedBlock\x12\x32\n\x11revised_sentences\x18\x0b \x03(\x0b\x32\x17.bareun.RevisedSentence\x12\x36\n\x05helps\x18\x0c \x03(\x0b\x32\'.bareun.CorrectErrorResponse.HelpsEntry\x12\x10\n\x08language\x18\x63 \x01(\t\x1a@\n\nHelpsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12!\n\x05value\x18\x02 \x01(\x0b\x32\x12.bareun.ReviseHelp:\x02\x38\x01*\x9e\x01\n\x10RevisionCategory\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07GRAMMER\x10\x01\x12\x08\n\x04WORD\x10\x02\x12\x0b\n\x07SPACING\x10\x03\x12\x0c\n\x08STANDARD\x10\x08\x12\x08\n\x04TYPO\x10\t\x12\x10\n\x0c\x46OREIGN_WORD\x10\n\x12\x14\n\x10\x43ONFUSABLE_WORDS\x10\x0b\x12\x0c\n\x08SENTENCE\x10\x0c\x12\x0b\n\x07\x43ONFIRM\x10\r*y\n\rCustomDictPos\x12\x0b\n\x07POS_UNK\x10\x00\x12\x0b\n\x07POS_NNG\x10\x01\x12\x0b\n\x07POS_NNP\x10\x02\x12\x11\n\rPOS_NNG_CARET\x10\x03\x12\n\n\x06POS_VV\x10\x04\x12\n\n\x06POS_VA\x10\x05\x12\n\n\x06POS_MM\x10\x06\x12\n\n\x06POS_IC\x10\x07\x32\x85\x01\n\x0fRevisionService\x12r\n\x0c\x43orrectError\x12\x1b.bareun.CorrectErrorRequest\x1a\x1c.bareun.CorrectErrorResponse\"\'\x82\xd3\xe4\x93\x02!\"\x1c/bareun/api/v1/correct-error:\x01*BB\n\x10\x61i.bareun.protosB\x14RevisionServiceProtoP\x01Z\x16\x62\x61reun.ai/proto/bareunb\x06proto3')
 
 _REVISIONCATEGORY = DESCRIPTOR.enum_types_by_name['RevisionCategory']
 RevisionCategory = enum_type_wrapper.EnumTypeWrapper(_REVISIONCATEGORY)
-RE_UNKNOWN = 0
-RE_KOREAN_SPELLING_PHONOLOGICAL_RULES = 1
-RE_KOREAN_SPELLING_MORPHOLOGICAL_RULES = 2
-RE_KOREAN_SPELLING_SPACING_RULES = 3
-RE_KOREAN_SPELLING_MISCELLANEOUS_RULES = 4
-RE_KOREAN_SPELLING_GENERAL = 5
-RE_KOREAN_STANDARD_PRONOUNCIATION_CHANGE = 6
-RE_KOREAN_STANDARD_WORD_SELECTION_CHANEG = 7
+_CUSTOMDICTPOS = DESCRIPTOR.enum_types_by_name['CustomDictPos']
+CustomDictPos = enum_type_wrapper.EnumTypeWrapper(_CUSTOMDICTPOS)
+UNKNOWN = 0
+GRAMMER = 1
+WORD = 2
+SPACING = 3
+STANDARD = 8
+TYPO = 9
+FOREIGN_WORD = 10
+CONFUSABLE_WORDS = 11
+SENTENCE = 12
+CONFIRM = 13
+POS_UNK = 0
+POS_NNG = 1
+POS_NNP = 2
+POS_NNG_CARET = 3
+POS_VV = 4
+POS_VA = 5
+POS_MM = 6
+POS_IC = 7
 
 
 _CORRECTERRORREQUEST = DESCRIPTOR.message_types_by_name['CorrectErrorRequest']
+_REVISEHELP = DESCRIPTOR.message_types_by_name['ReviseHelp']
 _REVISION = DESCRIPTOR.message_types_by_name['Revision']
 _REVISEDBLOCK = DESCRIPTOR.message_types_by_name['RevisedBlock']
 _REVISEDSENTENCE = DESCRIPTOR.message_types_by_name['RevisedSentence']
 _CORRECTERRORRESPONSE = DESCRIPTOR.message_types_by_name['CorrectErrorResponse']
+_CORRECTERRORRESPONSE_HELPSENTRY = _CORRECTERRORRESPONSE.nested_types_by_name['HelpsEntry']
 CorrectErrorRequest = _reflection.GeneratedProtocolMessageType('CorrectErrorRequest', (_message.Message,), {
   'DESCRIPTOR' : _CORRECTERRORREQUEST,
   '__module__' : 'bareun.revision_service_pb2'
   # @@protoc_insertion_point(class_scope:bareun.CorrectErrorRequest)
   })
 _sym_db.RegisterMessage(CorrectErrorRequest)
+
+ReviseHelp = _reflection.GeneratedProtocolMessageType('ReviseHelp', (_message.Message,), {
+  'DESCRIPTOR' : _REVISEHELP,
+  '__module__' : 'bareun.revision_service_pb2'
+  # @@protoc_insertion_point(class_scope:bareun.ReviseHelp)
+  })
+_sym_db.RegisterMessage(ReviseHelp)
 
 Revision = _reflection.GeneratedProtocolMessageType('Revision', (_message.Message,), {
   'DESCRIPTOR' : _REVISION,
@@ -65,31 +86,47 @@ RevisedSentence = _reflection.GeneratedProtocolMessageType('RevisedSentence', (_
 _sym_db.RegisterMessage(RevisedSentence)
 
 CorrectErrorResponse = _reflection.GeneratedProtocolMessageType('CorrectErrorResponse', (_message.Message,), {
+
+  'HelpsEntry' : _reflection.GeneratedProtocolMessageType('HelpsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CORRECTERRORRESPONSE_HELPSENTRY,
+    '__module__' : 'bareun.revision_service_pb2'
+    # @@protoc_insertion_point(class_scope:bareun.CorrectErrorResponse.HelpsEntry)
+    })
+  ,
   'DESCRIPTOR' : _CORRECTERRORRESPONSE,
   '__module__' : 'bareun.revision_service_pb2'
   # @@protoc_insertion_point(class_scope:bareun.CorrectErrorResponse)
   })
 _sym_db.RegisterMessage(CorrectErrorResponse)
+_sym_db.RegisterMessage(CorrectErrorResponse.HelpsEntry)
 
 _REVISIONSERVICE = DESCRIPTOR.services_by_name['RevisionService']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\020ai.bareun.protosB\024RevisionServiceProtoP\001Z\026bareun.ai/proto/bareun'
+  _CORRECTERRORRESPONSE_HELPSENTRY._options = None
+  _CORRECTERRORRESPONSE_HELPSENTRY._serialized_options = b'8\001'
   _REVISIONSERVICE.methods_by_name['CorrectError']._options = None
   _REVISIONSERVICE.methods_by_name['CorrectError']._serialized_options = b'\202\323\344\223\002!\"\034/bareun/api/v1/correct-error:\001*'
-  _REVISIONCATEGORY._serialized_start=730
-  _REVISIONCATEGORY._serialized_end=1057
+  _REVISIONCATEGORY._serialized_start=1029
+  _REVISIONCATEGORY._serialized_end=1187
+  _CUSTOMDICTPOS._serialized_start=1189
+  _CUSTOMDICTPOS._serialized_end=1310
   _CORRECTERRORREQUEST._serialized_start=98
   _CORRECTERRORREQUEST._serialized_end=252
-  _REVISION._serialized_start=255
-  _REVISION._serialized_end=398
-  _REVISEDBLOCK._serialized_start=400
-  _REVISEDBLOCK._serialized_end=502
-  _REVISEDSENTENCE._serialized_start=504
-  _REVISEDSENTENCE._serialized_end=600
-  _CORRECTERRORRESPONSE._serialized_start=602
-  _CORRECTERRORRESPONSE._serialized_end=727
-  _REVISIONSERVICE._serialized_start=1060
-  _REVISIONSERVICE._serialized_end=1193
+  _REVISEHELP._serialized_start=254
+  _REVISEHELP._serialized_end=379
+  _REVISION._serialized_start=381
+  _REVISION._serialized_end=484
+  _REVISEDBLOCK._serialized_start=487
+  _REVISEDBLOCK._serialized_end=678
+  _REVISEDSENTENCE._serialized_start=680
+  _REVISEDSENTENCE._serialized_end=730
+  _CORRECTERRORRESPONSE._serialized_start=733
+  _CORRECTERRORRESPONSE._serialized_end=1026
+  _CORRECTERRORRESPONSE_HELPSENTRY._serialized_start=962
+  _CORRECTERRORRESPONSE_HELPSENTRY._serialized_end=1026
+  _REVISIONSERVICE._serialized_start=1313
+  _REVISIONSERVICE._serialized_end=1446
 # @@protoc_insertion_point(module_scope)
