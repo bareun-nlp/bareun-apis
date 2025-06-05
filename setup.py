@@ -14,6 +14,10 @@ Programming Language :: Python :: 3.6
 Programming Language :: Python :: 3.7
 Programming Language :: Python :: 3.8
 Programming Language :: Python :: 3.9
+Programming Language :: Python :: 3.10
+Programming Language :: Python :: 3.11
+Programming Language :: Python :: 3.12
+Programming Language :: Python :: 3.13
 Programming Language :: Python :: 3 :: Only
 Natural Language :: Korean
 Development Status :: 5 - Production/Stable
@@ -39,7 +43,7 @@ Operating System :: MacOS
 
 setuptools.setup(
     name="bareun-apis",
-    version="0.14.0",
+    version="0.15.0",
     author="Gihyun YUN",
     author_email="gih2yun@baikal.ai",
     description="The google protobuf and grpc IDL, generated classes of python 3.",

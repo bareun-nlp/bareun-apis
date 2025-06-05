@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "bareun-apis"
-version = "0.14.0"
+version = "0.15.0"
 description = "bareunai-apis contains the python classes generated from the bareun ai APIs, which includes tagger, and so on."
 authors = ["Gihyun YUN <gih2yun@baikal.ai>"]
 license = "BSD-3-Clause"
 readme = "README.md"
 homepage = "https://bareun.ai/"
 repository = "https://github.com/bareun-nlp/bareun-apis"
-keywords = [ "bareun", "grpc", "protobuf", "POS tagger", "Korean"]
+keywords = [ "bareun", "grpc", "protobuf", "POS tagger", "Korean", "GEC", "Error Corrector"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Science/Research",
