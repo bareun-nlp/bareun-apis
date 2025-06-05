@@ -35,6 +35,11 @@ class CustomDictionaryServiceStub(object):
                 request_serializer=bareun_dot_custom__dict__pb2.RemoveCustomDictionariesRequest.SerializeToString,
                 response_deserializer=bareun_dot_custom__dict__pb2.RemoveCustomDictionariesResponse.FromString,
                 )
+        self.CheckConflict = channel.unary_unary(
+                '/bareun.CustomDictionaryService/CheckConflict',
+                request_serializer=bareun_dot_custom__dict__pb2.CheckConflictRequest.SerializeToString,
+                response_deserializer=bareun_dot_custom__dict__pb2.CheckConflictResponse.FromString,
+                )
 
 
 class CustomDictionaryServiceServicer(object):
@@ -68,6 +73,13 @@ class CustomDictionaryServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CheckConflict(self, request, context):
+        """사용사 사전 사이의 충돌을 점검한다.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CustomDictionaryServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -90,6 +102,11 @@ def add_CustomDictionaryServiceServicer_to_server(servicer, server):
                     servicer.RemoveCustomDictionaries,
                     request_deserializer=bareun_dot_custom__dict__pb2.RemoveCustomDictionariesRequest.FromString,
                     response_serializer=bareun_dot_custom__dict__pb2.RemoveCustomDictionariesResponse.SerializeToString,
+            ),
+            'CheckConflict': grpc.unary_unary_rpc_method_handler(
+                    servicer.CheckConflict,
+                    request_deserializer=bareun_dot_custom__dict__pb2.CheckConflictRequest.FromString,
+                    response_serializer=bareun_dot_custom__dict__pb2.CheckConflictResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -166,5 +183,22 @@ class CustomDictionaryService(object):
         return grpc.experimental.unary_unary(request, target, '/bareun.CustomDictionaryService/RemoveCustomDictionaries',
             bareun_dot_custom__dict__pb2.RemoveCustomDictionariesRequest.SerializeToString,
             bareun_dot_custom__dict__pb2.RemoveCustomDictionariesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CheckConflict(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/bareun.CustomDictionaryService/CheckConflict',
+            bareun_dot_custom__dict__pb2.CheckConflictRequest.SerializeToString,
+            bareun_dot_custom__dict__pb2.CheckConflictResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
