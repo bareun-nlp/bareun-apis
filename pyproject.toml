@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bareun-apis"
-version = "0.15.0"
+version = "0.15.1"
 description = "bareunai-apis contains the python classes generated from the bareun ai APIs, which includes tagger, and so on."
 authors = ["Gihyun YUN <gih2yun@baikal.ai>"]
 license = "BSD-3-Clause"

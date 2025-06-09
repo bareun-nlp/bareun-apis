@@ -143,6 +143,7 @@ class RevisionConfig(google.protobuf.message.Message):
     DISABLE_SPLIT_SENTENCE_FIELD_NUMBER: builtins.int
     DISABLE_CARET_SPACING_FIELD_NUMBER: builtins.int
     DISABLE_VX_SPACING_FIELD_NUMBER: builtins.int
+    TREAT_AS_TITLE_FIELD_NUMBER: builtins.int
     ENABLE_CLEANUP_WHITESPACE_FIELD_NUMBER: builtins.int
     ENABLE_SENTENCE_CHECK_FIELD_NUMBER: builtins.int
     disable_split_sentence: builtins.bool
@@ -151,6 +152,8 @@ class RevisionConfig(google.protobuf.message.Message):
     """복합명사 분리 사전 적용 비활성화"""
     disable_vx_spacing: builtins.bool
     """보조 용언 띄어쓰기 비활성화"""
+    treat_as_title: builtins.bool
+    """주어진 문장을 기사 등의 제목으로 취급, 기본값 false"""
     enable_cleanup_whitespace: builtins.bool
     """공백을 제거하는 것을 활성화하기"""
     enable_sentence_check: builtins.bool
@@ -161,10 +164,11 @@ class RevisionConfig(google.protobuf.message.Message):
         disable_split_sentence: builtins.bool = ...,
         disable_caret_spacing: builtins.bool = ...,
         disable_vx_spacing: builtins.bool = ...,
+        treat_as_title: builtins.bool = ...,
         enable_cleanup_whitespace: builtins.bool = ...,
         enable_sentence_check: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["disable_caret_spacing", b"disable_caret_spacing", "disable_split_sentence", b"disable_split_sentence", "disable_vx_spacing", b"disable_vx_spacing", "enable_cleanup_whitespace", b"enable_cleanup_whitespace", "enable_sentence_check", b"enable_sentence_check"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["disable_caret_spacing", b"disable_caret_spacing", "disable_split_sentence", b"disable_split_sentence", "disable_vx_spacing", b"disable_vx_spacing", "enable_cleanup_whitespace", b"enable_cleanup_whitespace", "enable_sentence_check", b"enable_sentence_check", "treat_as_title", b"treat_as_title"]) -> None: ...
 
 global___RevisionConfig = RevisionConfig
 
