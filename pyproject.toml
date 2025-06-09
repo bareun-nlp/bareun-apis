@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bareun-apis"
-version = "0.15.1"
+version = "0.15.2"
 description = "bareunai-apis contains the python classes generated from the bareun ai APIs, which includes tagger, and so on."
 authors = ["Gihyun YUN <gih2yun@baikal.ai>"]
 license = "BSD-3-Clause"
@@ -34,7 +34,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
-grpcio = "^1.46.0"
+grpcio = "^1.53.2"
 googleapis-common-protos = "^1.56.0"
 protobuf = "^3.19.4"
 
